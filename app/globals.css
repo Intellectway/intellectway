@@ -1,0 +1,58 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
+@import "tailwindcss";
+
+:root {
+  --background: #F1F1F1;
+  --foreground: #171717;
+}
+
+/* @theme is a valid Tailwind CSS v4 directive - CSS linter warning can be ignored */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-montserrat);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #F1F1F1;
+    --foreground: #171717;
+  }
+}
+
+html,
+body {
+  background: #F1F1F1 !important;
+  color: var(--foreground);
+  font-family: var(--font-montserrat), "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+
+* {
+  font-family: var(--font-montserrat), "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Show elements at 1225px and above, hide below */
+.show-above-1225 {
+  display: none !important;
+}
+
+@media (min-width: 1225px) {
+  .show-above-1225 {
+    display: revert !important;
+  }
+}
+
+/* Scroll to top button positioning */
+.scroll-to-top-btn {
+  bottom: 40px;
+  right: 30px;
+}
+
+/* Mobile positioning starting from 650px */
+@media (min-width: 650px) and (max-width: 1224px) {
+  .scroll-to-top-btn {
+    bottom: 10px !important;
+    right: 10px !important;
+  }
+}

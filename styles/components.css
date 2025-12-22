@@ -1,0 +1,8 @@
+.section-title {
+  @apply text-3xl font-semibold text-slate-900;
+}
+
+.section-subtitle {
+  @apply text-base text-slate-600;
+}
+

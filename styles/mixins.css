@@ -1,0 +1,8 @@
+:root {
+  --shadow-soft: 0 10px 30px -12px rgba(15, 23, 42, 0.35);
+}
+
+.shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
