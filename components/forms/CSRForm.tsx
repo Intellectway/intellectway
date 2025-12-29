@@ -136,13 +136,11 @@ export function CSRForm() {
           label="Home Country"
           name="homeCountry"
           options={COUNTRIES}
-          required
         />
         <Select
           label="Current Residency"
           name="currentResidency"
           options={COUNTRIES}
-          required
         />
       </div>
 

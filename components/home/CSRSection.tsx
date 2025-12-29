@@ -51,12 +51,15 @@ export function CSRSection() {
             
             <Link
               href="/csr"
-              className="inline-flex items-center justify-center rounded-full text-sm md:text-base font-medium text-white bg-[#17aac0] hover:bg-[#1292a6] transition w-full sm:w-auto"
+              className="inline-flex items-center justify-center text-sm md:text-base font-medium text-white transition hover:opacity-90 w-full sm:w-auto"
               style={{ 
-                paddingTop: "12px",
-                paddingRight: "clamp(32px, 4vw, 48px)",
-                paddingBottom: "12px",
-                paddingLeft: "clamp(32px, 4vw, 48px)",
+                backgroundColor: '#17aac0',
+                paddingTop: "6px",
+                paddingRight: "clamp(24px, 3.5vw, 46px)",
+                paddingBottom: "6px",
+                paddingLeft: "clamp(24px, 3.5vw, 46px)",
+                gap: "8px",
+                borderRadius: "999px"
               }}
             >
               Get Involved

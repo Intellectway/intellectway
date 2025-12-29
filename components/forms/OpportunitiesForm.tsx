@@ -3,7 +3,8 @@
 import { useState, useRef } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { Input, TextArea, Button } from "@/components/ui";
+import { Input, Select, TextArea, Button } from "@/components/ui";
+import { COUNTRIES } from "@/lib/countries";
 
 export function OpportunitiesForm() {
   const [preferredWorking, setPreferredWorking] = useState<string>("");
@@ -135,17 +136,15 @@ export function OpportunitiesForm() {
           name="additionalPhone"
           placeholder="Enter your phone number"
         />
-        <Input
+        <Select
           label="Home Country"
           name="homeCountry"
-          placeholder="Enter your home country"
-          required
+          options={COUNTRIES}
         />
-        <Input
+        <Select
           label="Current Residency"
           name="currentResidency"
-          placeholder="Enter your current residency"
-          required
+          options={COUNTRIES}
         />
         <label className="flex flex-col gap-2 text-sm">
           <span className="font-medium text-slate-700">How did you hear about us?</span>

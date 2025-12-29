@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ParallaxSection } from "@/components/ui";
 
 type ServiceSection = 
@@ -426,9 +427,9 @@ export default function ProfessionalServicesPage() {
 
                       {/* Apply Now Button */}
                       <div className="pt-4">
-                        <button className="inline-flex items-center px-6 py-3 bg-[#17aac0] text-white font-medium rounded-full hover:bg-[#1494a8] transition-colors">
+                        <Link href="/csr" className="inline-flex items-center px-6 py-3 bg-[#17aac0] text-white font-medium rounded-full hover:bg-[#1494a8] transition-colors">
                           Apply Now
-                        </button>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -478,9 +479,9 @@ export default function ProfessionalServicesPage() {
 
                       {/* Apply Now Button */}
                       <div className="pt-4">
-                        <button className="inline-flex items-center px-6 py-3 bg-[#17aac0] text-white font-medium rounded-full hover:bg-[#1494a8] transition-colors">
+                        <Link href="/csr" className="inline-flex items-center px-6 py-3 bg-[#17aac0] text-white font-medium rounded-full hover:bg-[#1494a8] transition-colors">
                           Apply Now
-                        </button>
+                        </Link>
                       </div>
                     </div>
                   </div>

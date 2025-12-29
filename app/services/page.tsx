@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ParallaxSection } from "@/components/ui";
 
 type ServiceTab = "Students" | "Professional" | "Corporates";
@@ -335,7 +336,8 @@ export default function ServicesPage() {
                               >
                                 {content.description}
                               </p>
-                              <button 
+                              <Link 
+                                href="/csr"
                                 className="inline-flex items-center gap-2 px-6 py-3 text-[#1E4469] font-medium rounded-full transition-colors"
                                 style={{
                                   background: "#D2DAE1",
@@ -349,7 +351,7 @@ export default function ServicesPage() {
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                   <path d="M7.4248 16.5999L12.8581 11.1666C13.4998 10.5249 13.4998 9.4749 12.8581 8.83324L7.4248 3.3999" stroke="#1E4469" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
                                 </svg>
-                              </button>
+                              </Link>
                             </div>
                           )}
                         </div>

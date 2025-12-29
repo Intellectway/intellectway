@@ -1,21 +1,25 @@
 import { SelectHTMLAttributes } from "react";
+import { cn } from "@/lib/helpers";
 
 interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   label: string;
   options: { value: string; label: string }[];
 }
 
-export function Select({ label, options, required, ...props }: SelectProps) {
+export function Select({ label, options, className, ...props }: SelectProps) {
+  const id = props.id ?? props.name ?? label.toLowerCase().replace(/\s+/g, "-");
+
   return (
-    <div className="space-y-2">
-      <label className="block text-sm font-medium text-slate-700">
-        {label}
-        {required && <span className="text-red-500 ml-1">*</span>}
-      </label>
+    <label htmlFor={id} className="flex flex-col gap-2 text-sm">
+      <span className="font-medium text-slate-700">{label}</span>
       <select
+        id={id}
+        className={cn(
+          "rounded-lg border px-4 py-2 text-sm text-slate-900 transition focus:border-[#17aac0] focus:outline-none focus:ring-2 focus:ring-[#c6eff3]",
+          className,
+        )}
+        style={{ borderColor: "#6C757D" }}
         {...props}
-        required={required}
-        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-[#17aac0] focus:ring-2 focus:ring-[#17aac0]/20 outline-none transition-all bg-white text-slate-900"
       >
         <option value="">Select {label}</option>
         {options.map((option) => (
@@ -24,7 +28,7 @@ export function Select({ label, options, required, ...props }: SelectProps) {
           </option>
         ))}
       </select>
-    </div>
+    </label>
   );
 }
 
