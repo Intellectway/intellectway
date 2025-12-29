@@ -3,7 +3,8 @@
 import { useState, useRef } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { Input, Button } from "@/components/ui";
+import { Input, Select, Button } from "@/components/ui";
+import { COUNTRIES } from "@/lib/countries";
 
 export function RepresentUsForm() {
   const [submitting, setSubmitting] = useState(false);
@@ -114,16 +115,16 @@ export function RepresentUsForm() {
           name="additionalPhone"
           placeholder="Enter your additional phone number"
         />
-        <Input
+        <Select
           label="Home Country"
           name="homeCountry"
-          placeholder="Enter your home country"
+          options={COUNTRIES}
           required
         />
-        <Input
+        <Select
           label="Current Residency"
           name="currentResidency"
-          placeholder="Enter your current residency"
+          options={COUNTRIES}
           required
         />
         <Input
