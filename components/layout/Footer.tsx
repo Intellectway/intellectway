@@ -50,10 +50,10 @@ const contactIcons = {
 } as const;
 
 const socialLinks = [
-  { href: "https://x.com", label: "X.com", icon: "fa-brands fa-x-twitter" },
-  { href: "https://facebook.com", label: "Facebook", icon: "fa-brands fa-facebook" },
-  { href: "https://instagram.com", label: "Instagram", icon: "fa-brands fa-instagram" },
-  { href: "https://linkedin.com", label: "LinkedIn", icon: "fa-brands fa-linkedin" },
+  { href: "https://x.com/intellectway", label: "X.com", icon: "fa-brands fa-x-twitter" },
+  { href: "https://www.facebook.com/pages/Intellect-Way/1554847638117508", label: "Facebook", icon: "fa-brands fa-facebook" },
+  { href: "https://www.instagram.com/intellectway/", label: "Instagram", icon: "fa-brands fa-instagram" },
+  { href: "https://www.linkedin.com/company/intellectway/?trk=biz-companies-cym", label: "LinkedIn", icon: "fa-brands fa-linkedin" },
 ] as const;
 
 type ContactItem = {

@@ -286,11 +286,11 @@ export function ContactSection() {
               </h3>
               <div className="flex items-center gap-4">
                 <a
-                  href="https://twitter.com/intellectway"
+                  href="https://x.com/intellectway"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition-colors"
-                  aria-label="Twitter"
+                  aria-label="X"
                   style={{ color: "#414141" }}
                 >
                   <svg
@@ -307,7 +307,7 @@ export function ContactSection() {
                   </svg>
                 </a>
                 <a
-                  href="https://facebook.com/intellectway"
+                  href="https://www.facebook.com/pages/Intellect-Way/1554847638117508"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition-colors"
@@ -328,7 +328,7 @@ export function ContactSection() {
                   </svg>
                 </a>
                 <a
-                  href="https://instagram.com/intellectway"
+                  href="https://www.instagram.com/intellectway/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition-colors"
@@ -349,7 +349,7 @@ export function ContactSection() {
                   </svg>
                 </a>
                 <a
-                  href="https://linkedin.com/company/intellectway"
+                  href="https://www.linkedin.com/company/intellectway/?trk=biz-companies-cym"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition-colors"
