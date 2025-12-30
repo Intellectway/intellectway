@@ -17,16 +17,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "IntellectWay",
+  title: "intellectway",
   description: "Premier provider of training and educational solutions",
   icons: {
     icon: [
-      { url: "/MainLogo.png", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
     ],
     apple: [
-      { url: "/MainLogo.png", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
     ],
-    shortcut: "/MainLogo.png",
+    shortcut: "/favicon.svg",
   },
 };
 
