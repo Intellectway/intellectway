@@ -24,6 +24,7 @@ const serviceRoutes = [
 
 export function Nav() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const servicesRef = useRef<HTMLDivElement>(null);
 
@@ -98,9 +99,8 @@ export function Nav() {
             >
               Service
               <svg
-                className={`w-4 h-4 transition-transform ${
-                  isServicesOpen ? "rotate-180" : ""
-                }`}
+                className={`w-4 h-4 transition-transform ${isServicesOpen ? "rotate-180" : ""
+                  }`}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -167,19 +167,16 @@ export function Nav() {
         >
           <div className="flex flex-col gap-1.5 w-6">
             <span
-              className={`h-0.5 bg-slate-700 transition-all duration-300 ${
-                isMobileMenuOpen ? "rotate-45 translate-y-2 w-full" : "w-3 self-start"
-              }`}
+              className={`h-0.5 bg-slate-700 transition-all duration-300 ${isMobileMenuOpen ? "rotate-45 translate-y-2 w-full" : "w-3 self-start"
+                }`}
             />
             <span
-              className={`h-0.5 w-full bg-slate-700 transition-all duration-300 ${
-                isMobileMenuOpen ? "opacity-0" : ""
-              }`}
+              className={`h-0.5 w-full bg-slate-700 transition-all duration-300 ${isMobileMenuOpen ? "opacity-0" : ""
+                }`}
             />
             <span
-              className={`h-0.5 bg-slate-700 transition-all duration-300 ${
-                isMobileMenuOpen ? "-rotate-45 -translate-y-2 w-full" : "w-3 self-end"
-              }`}
+              className={`h-0.5 bg-slate-700 transition-all duration-300 ${isMobileMenuOpen ? "-rotate-45 -translate-y-2 w-full" : "w-3 self-end"
+                }`}
             />
           </div>
         </button>
@@ -195,9 +192,8 @@ export function Nav() {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed top-[73px] left-0 right-0 z-[1000] h-[calc(100vh-73px)] overflow-y-auto bg-white transition-transform duration-300 ease-in-out sm:hidden ${
-          isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
+        className={`fixed top-[73px] left-0 right-0 z-[1000] h-[calc(100vh-73px)] overflow-y-auto bg-white transition-transform duration-300 ease-in-out sm:hidden ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
       >
         <nav className="flex flex-col px-6 py-6">
           {/* Mobile Navigation Links */}
@@ -220,13 +216,12 @@ export function Nav() {
           <div className="border-b border-slate-200">
             <button
               className="flex w-full items-center justify-between py-4 text-base font-normal text-slate-600 transition hover:text-slate-900"
-              onClick={() => setIsServicesOpen(!isServicesOpen)}
+              onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
             >
               <span>Service</span>
               <svg
-                className={`w-5 h-5 transition-transform ${
-                  isServicesOpen ? "rotate-180" : ""
-                }`}
+                className={`w-5 h-5 transition-transform ${isMobileServicesOpen ? "rotate-180" : ""
+                  }`}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -239,7 +234,7 @@ export function Nav() {
                 />
               </svg>
             </button>
-            {isServicesOpen && (
+            {isMobileServicesOpen && (
               <div className="pb-2 pl-4">
                 {serviceRoutes.map((service) => (
                   <Link
@@ -247,7 +242,7 @@ export function Nav() {
                     href={service.href}
                     className="block py-3 text-sm text-slate-600 transition hover:text-slate-900"
                     onClick={() => {
-                      setIsServicesOpen(false);
+                      setIsMobileServicesOpen(false);
                       setIsMobileMenuOpen(false);
                     }}
                   >
