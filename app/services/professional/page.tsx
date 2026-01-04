@@ -345,7 +345,7 @@ export default function ProfessionalServicesPage() {
                       {/* Image Section */}
                       {content.image && (
                         <div
-                          className="relative overflow-hidden w-[350px] lg:w-[400px]"
+                          className="relative overflow-hidden w-[300px] lg:w-[400px]"
                           style={{
                             aspectRatio: "420/273",
                             borderRadius: "25px",
