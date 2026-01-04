@@ -168,7 +168,7 @@ export function Footer() {
             </div>
           </nav>
 
-          <div className="space-y-4" style={{ marginLeft: '4rem', marginTop: '1rem' }}>
+          <div className="space-y-4 lg:ml-16" style={{ marginTop: '1rem' }}>
             <h3 className="font-semibold" style={{ fontSize: '14px' }}>United States</h3>
             <ul className="space-y-4" style={{ fontSize: '14px' }}>
               {contact.us.map(({ icon, label, href }) => (
@@ -226,12 +226,12 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col gap-3 border-t border-white/25 pt-6 font-normal text-white/80 md:flex-row md:items-center md:justify-between mt-4" style={{ fontSize: '14px' }}>
-          <div className="flex flex-wrap items-center gap-5">
+          <div className="flex flex-wrap items-center gap-5 text-xs md:text-sm">
             <span>Sitemap</span>
             <span>Privacy &amp; Policy</span>
             <span>Terms &amp; Conditions</span>
           </div>
-          <p className="text-white/90" style={{ fontSize: '14px' }}>
+          <p className="text-white/90 text-center md:text-left" style={{ fontSize: '14px' }}>
             © Copyright 2025 IntellectWay. Designed and Developed by{" "}
             <Link
               href="https://entertab.net/"

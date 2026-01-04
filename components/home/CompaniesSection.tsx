@@ -9,17 +9,17 @@ const logoImages = [
 
 export function CompaniesSection() {
   return (
-    <section className="mx-auto max-w-7xl space-y-8 py-16">
+    <section className="mx-auto max-w-7xl space-y-8 py-16 p-8 lg:p-0">
       <header className="space-y-4 text-center">
-        <h2 
+        <h2
           className="text-3xl font-semibold"
           style={{ color: "#414141" }}
         >
           Institutions We Work With
         </h2>
-        <p 
+        <p
           className="mx-auto max-w-5xl"
-          style={{ 
+          style={{
             fontFamily: "Montserrat",
             fontWeight: 300,
             fontSize: "clamp(0.9rem, 2vw, 1.1rem)",
@@ -30,7 +30,7 @@ export function CompaniesSection() {
           We are proud to have collaborated with a wide range of reputable universities, training centers, and professional organizations around the world. These partnerships reflect our commitment to quality, trust, and lasting impact.
         </p>
       </header>
-      
+
       <div className="relative">
         <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-9 gap-4 md:gap-8">
           {logoImages.map((logoNum) => (
@@ -47,7 +47,7 @@ export function CompaniesSection() {
             </div>
           ))}
         </div>
-        
+
         <div className="flex justify-end mt-4">
           <Link
             href="/partners"

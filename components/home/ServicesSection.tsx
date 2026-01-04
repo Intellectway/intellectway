@@ -110,7 +110,7 @@ export function ServicesSection() {
 
   return (
     <>
-      <section className="relative overflow-hidden mt-10">
+      <section className="relative overflow-hidden mt-10 p-8 lg:p-0">
         <div className="mx-auto w-full max-w-[90rem] relative" style={{ zIndex: 100 }}>
           {/* Header Section */}
           <header className="mb-8 md:mb-12 space-y-2 text-center">
@@ -362,20 +362,19 @@ export function ServicesSection() {
             </header>
 
             <div
-              className="grid gap-8 justify-center mx-auto max-w-7xl"
+              className="grid gap-4 md:gap-8 justify-center mx-auto max-w-7xl"
               style={{
-                gridTemplateColumns: "repeat(auto-fit, 400px)",
+                gridTemplateColumns: "repeat(auto-fit, minmax(280px, 400px))",
               }}
             >
               {reasons.map((reason) => (
                 <article
                   key={reason.id}
-                  className={`relative ${reason.backgroundColor ? "" : reason.color} border border-slate-200`}
+                  className={`relative ${reason.backgroundColor ? "" : reason.color} border border-slate-200 w-full max-w-[400px]`}
                   style={{
-                    width: "400px",
-                    height: "350px",
+                    minHeight: "280px",
                     borderRadius: "16px",
-                    padding: "32px",
+                    padding: "clamp(20px, 4vw, 32px)",
                     boxShadow: "0px 2px 4px 0px #41414166",
                     backgroundColor: reason.backgroundColor || undefined,
                   }}
@@ -406,17 +405,18 @@ export function ServicesSection() {
                   </div>
 
                   {/* Icon */}
-                  <div className="mb-4 flex items-start">
+                  <div className="mb-3 md:mb-4 flex items-start">
                     <Image
                       src={reason.icon}
                       alt={reason.title}
-                      width={80}
-                      height={80}
+                      width={60}
+                      height={60}
+                      className="w-[60px] h-[60px] md:w-[80px] md:h-[80px]"
                     />
                   </div>
 
                   {/* Content */}
-                  <h3 className="mb-3 text-xl font-semibold" style={{ color: "#414141" }}>
+                  <h3 className="mb-2 md:mb-3 text-lg md:text-xl font-semibold" style={{ color: "#414141" }}>
                     {reason.title}
                   </h3>
                   <p
@@ -424,7 +424,7 @@ export function ServicesSection() {
                       color: "#414141",
                       fontFamily: "Montserrat",
                       fontWeight: 300,
-                      fontSize: "17px",
+                      fontSize: "clamp(14px, 3vw, 17px)",
                       paddingBottom: "10px",
                     }}
                   >
@@ -458,7 +458,7 @@ export function ServicesSection() {
               bottomRightColor="#C3E5CA"
             />
           </div>
-          
+
           <div style={{ display: "block" }}>
             <ColoredLetters
               size="large"
@@ -488,7 +488,7 @@ export function ServicesSection() {
               bottomRightColor="#C3E5CA"
             />
           </div>
-          
+
           <div style={{ display: "block" }}>
             <ColoredLetters
               size="large"

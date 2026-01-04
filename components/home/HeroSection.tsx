@@ -100,15 +100,15 @@ export function HeroSection() {
       {slides.map((slide, index) => {
         const isActive = index === currentSlide;
         const slideOffset = index - currentSlide;
-        
+
         // Calculate translateX for smooth slide animation with no gaps
         let translateX = 100; // Default: off-screen to the right
         let opacity = 1; // Default opacity
-        
+
         // Calculate next and previous slide indices
         const nextSlideIndex = (currentSlide + 1) % slides.length;
         const prevSlideIndex = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
-        
+
         // If using dissolve transition (last to first), use opacity instead of translateX
         if (useDissolve && isAnimating) {
           translateX = 0; // Keep slides at same position
@@ -162,104 +162,98 @@ export function HeroSection() {
         }
 
         return (
-        <div
-          key={slide.id}
-          className={`absolute inset-0 ${
-            useDissolve 
-              ? "transition-opacity duration-[1000ms] ease-in-out" 
-              : "transition-transform duration-[1000ms] ease-in-out"
-          } ${
-            isActive 
-              ? "z-10" 
-              : (index === nextSlideIndex || index === prevSlideIndex) 
-                ? "z-5" 
-                : "z-0"
-          }`}
-          style={{ 
-            transform: `translateX(${translateX}%)`,
-            opacity: opacity
-          }}
-        >
-          {/* Background Image - Full Width */}
           <div
-            className="absolute inset-0 bg-cover bg-[50%_20%] bg-no-repeat"
+            key={slide.id}
+            className={`absolute inset-0 ${useDissolve
+              ? "transition-opacity duration-[1000ms] ease-in-out"
+              : "transition-transform duration-[1000ms] ease-in-out"
+              } ${isActive
+                ? "z-10"
+                : (index === nextSlideIndex || index === prevSlideIndex)
+                  ? "z-5"
+                  : "z-0"
+              }`}
             style={{
-              backgroundImage: slide.image
-                ? `url(${slide.image})`
-                : "none",
+              transform: `translateX(${translateX}%)`,
+              opacity: opacity
             }}
-          />
+          >
+            {/* Background Image - Full Width */}
+            <div
+              className="absolute inset-0 bg-cover bg-[50%_20%] bg-no-repeat"
+              style={{
+                backgroundImage: slide.image
+                  ? `url(${slide.image})`
+                  : "none",
+              }}
+            />
 
-          {/* Gradient Overlay - Primary to Transparent */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#17aac0]/50 to-transparent z-10"></div>
+            {/* Gradient Overlay - Primary to Transparent */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#17aac0]/50 to-transparent z-10"></div>
 
-          {/* Content on Left Side */}
-          <div className="relative z-20 flex h-full items-center">
-            <div className="mx-auto w-full max-w-7xl px-6 lg:px-12">
-              <div className="max-w-3xl">
-                <h1
-                  className={`mb-6 text-xl font-bold leading-tight text-white transition-all duration-[1200ms] ease-out sm:text-4xl lg:text-5xl ${
-                    index === currentSlide && !isAnimating
+            {/* Content on Left Side */}
+            <div className="relative z-[100] lg:z-20 flex h-full items-center">
+              <div className="mx-auto w-full max-w-7xl px-6 lg:px-12">
+                <div className="max-w-3xl">
+                  <h1
+                    className={`mb-6 text-xl font-bold leading-tight text-white transition-all duration-[1200ms] ease-out sm:text-4xl lg:text-5xl ${index === currentSlide && !isAnimating
                       ? "translate-y-0 opacity-100 delay-0"
                       : "translate-y-8 opacity-0"
-                  }`}
-                >
-                  {slide.title}
-                </h1>
-                <p
-                  className={`mb-8 max-w-2xl text-base leading-7 text-white/90 transition-all duration-[1200ms] ease-out sm:text-lg ${
-                    index === currentSlide && !isAnimating
+                      }`}
+                  >
+                    {slide.title}
+                  </h1>
+                  <p
+                    className={`mb-8 max-w-2xl text-base leading-7 text-white/90 transition-all duration-[1200ms] ease-out sm:text-lg ${index === currentSlide && !isAnimating
                       ? "translate-y-0 opacity-100 delay-200"
                       : "translate-y-8 opacity-0"
-                  }`}
-                >
-                  {slide.description}
-                </p>
-                <Link
-                  href={slide.buttonLink}
-                  className={`inline-block text-white transition-all duration-[1200ms] ease-out hover:bg-[#1292a6] ${
-                    index === currentSlide && !isAnimating
+                      }`}
+                  >
+                    {slide.description}
+                  </p>
+                  <Link
+                    href={slide.buttonLink}
+                    className={`inline-block text-white transition-all duration-[1200ms] ease-out hover:bg-[#1292a6] ${index === currentSlide && !isAnimating
                       ? "translate-y-0 opacity-100 delay-400"
                       : "translate-y-8 opacity-0"
-                  }`}
-                  style={{
-                    fontFamily: "Montserrat",
-                    fontWeight: 400,
-                    fontStyle: "normal",
-                    fontSize: "20px",
-                    lineHeight: "130%",
-                    letterSpacing: "0%",
-                    textAlign: "center",
-                    verticalAlign: "middle",
-                    width: "auto",
-                    height: "48px",
-                    gap: "8px",
-                    borderRadius: "32px",
-                    paddingRight: "32px",
-                    paddingLeft: "32px",
-                    backgroundColor: "#17AAC0",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    justifyContent: "center"
-                  }}
-                >
-                  {slide.buttonText}
-                </Link>
+                      }`}
+                    style={{
+                      fontFamily: "Montserrat",
+                      fontWeight: 400,
+                      fontStyle: "normal",
+                      fontSize: "20px",
+                      lineHeight: "130%",
+                      letterSpacing: "0%",
+                      textAlign: "center",
+                      verticalAlign: "middle",
+                      width: "auto",
+                      height: "48px",
+                      gap: "8px",
+                      borderRadius: "32px",
+                      paddingRight: "32px",
+                      paddingLeft: "32px",
+                      backgroundColor: "#17AAC0",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center"
+                    }}
+                  >
+                    {slide.buttonText}
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
-        </div>
         );
       })}
 
       {/* Decorative Pattern - Bottom Right */}
-      <div 
-        className={`absolute bottom-20 right-16 z-20 transition-all duration-[1200ms] ease-out ${
-          !isAnimating
-            ? "opacity-100 delay-0"
-            : "opacity-0"
-        }`}
-        style={{ 
+      <div
+        className={`absolute bottom-20 right-16 z-20 transition-all duration-[1200ms] ease-out hidden lg:block ${!isAnimating
+          ? "opacity-100 delay-0"
+          : "opacity-0"
+          }`}
+        style={{
           transform: `translateX(35%) translateY(${!isAnimating ? '40%' : 'calc(20% + 2rem)'}) rotate(-35deg)`
         }}
       >
@@ -308,11 +302,10 @@ export function HeroSection() {
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                index === currentSlide
-                  ? "w-8 bg-white"
-                  : "w-2 bg-white/50 hover:bg-white/75"
-              }`}
+              className={`h-2 rounded-full transition-all duration-300 ${index === currentSlide
+                ? "w-8 bg-white"
+                : "w-2 bg-white/50 hover:bg-white/75"
+                }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
