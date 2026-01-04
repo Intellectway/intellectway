@@ -72,7 +72,7 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-6 rounded-xl border border-slate-200 p-6"
+      className="space-y-6 rounded-xl border border-slate-200 p-1 sm:p-6"
       style={{ backgroundColor: "#E2E3E580" }}
     >
       <h2
