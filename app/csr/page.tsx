@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function CSRPage() {
   return (
     <main className="mx-auto max-w-6xl px-4 sm:px-6 xl:py-8 sm:py-22 lg:py-18">
-      <section className="mx-auto max-w-6xl px-4 sm:px-6 sm:py-12 mt-[80px] sm:mt-0">
+      <section className="mx-auto max-w-6xl px-4 sm:px-6 sm:py-12 mt-[100px] sm:mt-0">
         <div className="space-y-4 sm:space-y-6 text-center mb-8 sm:mb-12 mt-0">
           <div className="relative z-10 flex h-full justify-center">
             <p className="text-xs sm:text-sm">
@@ -83,7 +83,7 @@ export default function CSRPage() {
               zIndex: 0,
             }}
           >
-            <ColoredLetters  
+            <ColoredLetters
               size="large"
               topLeftColor="#F8DD7B"
               topRightColor="#C3E5CA"
@@ -101,7 +101,7 @@ export default function CSRPage() {
               zIndex: 0,
             }}
           >
-            <ColoredLetters  
+            <ColoredLetters
               size="large"
               topLeftColor="#FFA9A0"
               topRightColor="#CFD2EE"
@@ -110,7 +110,7 @@ export default function CSRPage() {
             />
           </div>
 
-          <div className="relative z-10">
+          <div className="relative z-10 mb-6 sm:mb-12 mt-3 sm:mt-0">
             <CSRForm />
           </div>
 
@@ -124,7 +124,7 @@ export default function CSRPage() {
               zIndex: 0,
             }}
           >
-            <ColoredLetters 
+            <ColoredLetters
               size="large"
               topLeftColor="#F8DD7B"
               topRightColor="#C3E5CA"
@@ -142,7 +142,7 @@ export default function CSRPage() {
               zIndex: 0,
             }}
           >
-            <ColoredLetters 
+            <ColoredLetters
               size="large"
               topLeftColor="#FFA9A0"
               topRightColor="#CFD2EE"
