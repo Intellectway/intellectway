@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ParallaxSection } from "@/components/ui";
 
-type ServiceSection = 
+type ServiceSection =
   | "Training & Executive Education"
   | "Conferences, Workshops & Guest Speakers"
   | "Corporate Learning & Development"
@@ -235,13 +235,13 @@ export default function ProfessionalServicesPage() {
         breadcrumb="Home/ Services / Professional Services"
         height="short"
       />
-      
+
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Left Sidebar */}
           <aside className="lg:col-span-4">
             <div className="sticky top-18">
-              <h2 
+              <h2
                 className="mb-6 p-3 pl-4"
                 style={{
                   fontFamily: "Montserrat, sans-serif",
@@ -331,7 +331,7 @@ export default function ProfessionalServicesPage() {
               {serviceSections.map((section) => {
                 const content = serviceContent[section];
                 const sectionId = createSlug(section);
-                
+
                 return (
                   <div
                     key={section}
@@ -344,10 +344,9 @@ export default function ProfessionalServicesPage() {
                     <div className="space-y-4">
                       {/* Image Section */}
                       {content.image && (
-                        <div 
-                          className="relative overflow-hidden"
+                        <div
+                          className="relative overflow-hidden w-[350px] lg:w-[400px]"
                           style={{
-                            width: "400px",
                             aspectRatio: "420/273",
                             borderRadius: "25px",
                           }}
@@ -361,7 +360,7 @@ export default function ProfessionalServicesPage() {
                           />
                           <div
                             className="absolute"
-                            style={{ 
+                            style={{
                               zIndex: 1,
                               position: "absolute",
                               right: "0",
@@ -435,7 +434,7 @@ export default function ProfessionalServicesPage() {
                   </div>
                 );
               })}
-              
+
               {/* API Services Content */}
               {apiServices.map((service) => {
                 const serviceId = `api-service-${service.id}`;
@@ -464,7 +463,7 @@ export default function ProfessionalServicesPage() {
 
                       {/* Description */}
                       <div className="space-y-4">
-                        <div 
+                        <div
                           className="space-y-2"
                           style={{
                             fontFamily: "Montserrat, sans-serif",
