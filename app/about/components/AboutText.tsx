@@ -89,11 +89,7 @@ export function AboutText() {
       </div>
 
       <div
-        className="lg:col-span-1 relative min-h-[200px] sm:min-h-[300px] lg:min-h-[400px] hidden lg:block"
-        style={{
-          display: 'flex',
-          justifyContent: 'end',
-        }}>
+        className="lg:col-span-1 relative min-h-[200px] sm:min-h-[300px] lg:min-h-[400px] hidden lg:flex justify-end">
         {/* Top ColoredLetters */}
         <div
           className="absolute top-0 items-start gap-4 sm:gap-6"
@@ -137,7 +133,7 @@ export function AboutText() {
           />
         </div>
       </div>
-    </div>
+    </div >
   );
 }
 
