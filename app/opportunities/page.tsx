@@ -12,7 +12,7 @@ export default function OpportunitiesPage() {
     <main className="mx-auto max-w-6xl px-4 sm:px-6 xl:py-8 sm:py-22 lg:py-18">
       <section className="mx-auto max-w-6xl px-4 sm:px-6 sm:py-12 mt-[100px] sm:mt-0">
         <div className="space-y-4 sm:space-y-6 text-center mb-8 sm:mb-12 mt-0">
-          <div className="relative z-10 flex h-full justify-center">
+          <div className="relative z-10 flex h-full justify-center mt-5">
             <p className="text-xs sm:text-sm">
               <span
                 style={{
