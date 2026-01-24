@@ -15,11 +15,11 @@ export default function BlogsPage() {
     <main style={{ backgroundColor: "#F1F1F1" }}>
       <ParallaxSection
         image="/Images/BlogPage.png"
-        title="Blog"
-        breadcrumb="Home/ Blog"
+        title="Blogs"
+        breadcrumb="Home/ Blogs"
         height="medium"
       />
-      
+
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-8 sm:mt-12 lg:mt-[50px]">
         <BlogsList />
       </section>
