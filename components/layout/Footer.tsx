@@ -128,6 +128,8 @@ export function Footer() {
                   <Link
                     key={social.label}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={social.label}
                     className="flex h-12 w-12 items-center justify-center rounded-full text-white transition hover:bg-white/20"
                   >

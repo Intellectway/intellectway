@@ -17,7 +17,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "intellectway",
+  title: {
+    default: "Intellectway",
+    template: "%s | Intellectway",
+  },
   description: "Premier provider of training and educational solutions",
   icons: {
     icon: [

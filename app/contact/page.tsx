@@ -13,15 +13,7 @@ export default function ContactPage() {
 
   return (
     <main>
-      <div className="relative w-full h-[55vh] mt-4 sm:mt-6 lg:mt-[30px]">
-        <Image
-          src="/Images/Contact.png"
-          alt="Contact Us"
-          fill
-          className="object-cover"
-          priority
-        />
-      </div>
+      <img src="Images/Contact.png" alt="Contact Us" className="mt-25" />
       <div className="relative z-10 flex h-full justify-center mt-5">
         <p className="text-xs sm:text-sm">
           <span
