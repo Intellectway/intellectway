@@ -8,7 +8,7 @@ const httpsAgent = new https.Agent({
 
 export async function POST(request: Request) {
   try {
-    const base = process.env.API_BASE_URL || process.env.NEXT_PUBLIC_API_BASE_URL || "http://intellecatwayfinal.runasp.net";
+    const base = process.env.API_BASE_URL || process.env.NEXT_PUBLIC_API_BASE_URL || "https://intellecatwayfinal.runasp.net";
     const target = `${base.replace(/\/$/, "")}/api/Opportunity`;
     // Read incoming raw body as ArrayBuffer and forward with same content-type
     const incomingContentType = request.headers.get("content-type") || "multipart/form-data";
@@ -40,12 +40,12 @@ export async function POST(request: Request) {
       clearTimeout(timeoutId);
     } catch (fetchErr: any) {
       clearTimeout(timeoutId);
-      
+
       if (fetchErr.name === 'AbortError') {
         console.error("Opportunity API request timeout");
         return NextResponse.json({ message: "Request timeout", detail: "The API request took too long to respond" }, { status: 504 });
       }
-      
+
       console.error("Error forwarding to target:", fetchErr?.message || fetchErr);
       console.error("Error details:", { code: fetchErr.code, cause: fetchErr.cause });
       return NextResponse.json({ message: "Upstream request failed", detail: String(fetchErr?.message || fetchErr), code: fetchErr.code }, { status: 502 });

@@ -9,7 +9,7 @@ const httpsAgent = new https.Agent({
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const base = process.env.API_BASE_URL || process.env.NEXT_PUBLIC_API_BASE_URL || "http://intellecatwayfinal.runasp.net";
+    const base = process.env.API_BASE_URL || process.env.NEXT_PUBLIC_API_BASE_URL || "https://intellecatwayfinal.runasp.net";
     const target = `${base.replace(/\/$/, "")}/api/ContactUs`;
 
     console.log("Contact proxy -> target:", target);
@@ -21,7 +21,7 @@ export async function POST(request: Request) {
     try {
       const res = await fetch(target, {
         method: "POST",
-        headers: { 
+        headers: {
           "Content-Type": "application/json",
           "User-Agent": "IntellectWay-NextJS/1.0",
         },
@@ -46,7 +46,7 @@ export async function POST(request: Request) {
       });
     } catch (fetchError: any) {
       clearTimeout(timeoutId);
-      
+
       if (fetchError.name === 'AbortError') {
         console.error("Contact API request timeout");
         return NextResponse.json(
@@ -54,7 +54,7 @@ export async function POST(request: Request) {
           { status: 504 }
         );
       }
-      
+
       throw fetchError;
     }
   } catch (err: any) {
@@ -65,12 +65,12 @@ export async function POST(request: Request) {
       message: err.message,
     });
     return NextResponse.json(
-      { 
-        message: "Unable to send contact form", 
+      {
+        message: "Unable to send contact form",
         error: err.message || "Connection error",
         code: err.code || "UNKNOWN",
         details: process.env.NODE_ENV === 'development' ? err.toString() : undefined
-      }, 
+      },
       { status: 500 }
     );
   }

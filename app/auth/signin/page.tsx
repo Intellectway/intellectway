@@ -29,7 +29,7 @@ export default function SignInPage() {
     setError(null);
 
     try {
-      const response = await fetch('http://intellecatwayfinal.runasp.net/api/Authentication/login', {
+      const response = await fetch('https://intellecatwayfinal.runasp.net/api/Authentication/login', {
         method: 'POST',
         headers: {
           'accept': '*/*',

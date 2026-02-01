@@ -11,7 +11,7 @@ export async function GET(request: Request) {
   try {
     const url = new URL(request.url);
     const params = url.searchParams.toString();
-    const base = process.env.API_BASE_URL || process.env.NEXT_PUBLIC_API_BASE_URL || "http://intellecatwayfinal.runasp.net";
+    const base = process.env.API_BASE_URL || process.env.NEXT_PUBLIC_API_BASE_URL || "https://intellecatwayfinal.runasp.net";
     const target = `${base.replace(/\/$/, "")}/api/Service${params ? `?${params}` : ""}`;
 
     console.log("Service proxy -> target:", target);
@@ -23,7 +23,7 @@ export async function GET(request: Request) {
     try {
       const res = await fetch(target, {
         method: "GET",
-        headers: { 
+        headers: {
           accept: "application/json",
           "User-Agent": "IntellectWay-NextJS/1.0",
         },
@@ -47,7 +47,7 @@ export async function GET(request: Request) {
       });
     } catch (fetchError: any) {
       clearTimeout(timeoutId);
-      
+
       if (fetchError.name === 'AbortError') {
         console.error("Service API request timeout");
         return NextResponse.json(
@@ -55,7 +55,7 @@ export async function GET(request: Request) {
           { status: 504 }
         );
       }
-      
+
       throw fetchError;
     }
   } catch (err: any) {
@@ -66,12 +66,12 @@ export async function GET(request: Request) {
       message: err.message,
     });
     return NextResponse.json(
-      { 
-        message: "Unable to fetch services", 
+      {
+        message: "Unable to fetch services",
         error: err.message || "Connection error",
         code: err.code || "UNKNOWN",
         details: process.env.NODE_ENV === 'development' ? err.toString() : undefined
-      }, 
+      },
       { status: 500 }
     );
   }

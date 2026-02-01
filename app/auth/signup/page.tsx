@@ -89,7 +89,7 @@ export default function SignUpPage() {
     setApiError(null);
 
     try {
-      const response = await fetch('http://intellecatwayfinal.runasp.net/api/Authentication/register-user', {
+      const response = await fetch('https://intellecatwayfinal.runasp.net/api/Authentication/register-user', {
         method: 'POST',
         headers: {
           'accept': '*/*',
