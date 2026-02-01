@@ -13,7 +13,7 @@ export default function ContactPage() {
 
   return (
     <main>
-      <img src="Images/Contact.png" alt="Contact Us" className="mt-25" />
+      <img src="/Images/Contact.png" alt="Contact Us" className="mt-25" />
       <div className="relative z-10 flex h-full justify-center mt-5">
         <p className="text-xs sm:text-sm">
           <span
