@@ -44,4 +44,3 @@ export async function apiPost<T, D = unknown>(
 
   return response.json() as Promise<T>;
 }
-
