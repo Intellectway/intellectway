@@ -1,5 +1,5 @@
 const BASE_URL =
-  process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://intellecatwayfinal.runasp.net";
+  process.env.NEXT_PUBLIC_API_BASE_URL ?? "https://intellecatwayfinal.runasp.net";
 const defaultHeaders = {
   "Content-Type": "application/json",
 };
